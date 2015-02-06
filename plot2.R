@@ -6,11 +6,9 @@
 my_data <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?", skip = 66636, nrows = 2880)
 ## Create a vector out of the values from the Global Active Power column (3)
 x <- my_data[[3]]
-## change device to png
-png(filename = "plot1.png", width = 480, height = 480)
 ## Generate a histogram of the values using labels, title, and color per specification
-hist(x, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
+hist(x, col = "red", main = "Global Active Power", xlab = "Global Active Power(kilowatts)")
 ## Copy my plot to a PNG file
-## dev.copy(png, file = "plot1.png")
+dev.copy(png, file = "plot1.png")
 ## Close the PNG device
 dev.off()
